@@ -1,4 +1,4 @@
-# Plato's Pizza Sales Analysis (Interactive Dashboard creation using MS Excel)
+# UAE Used Cars Analysis (Interactive Dashboard creation using Power Bi)
 
 ## Table of Contents
 
