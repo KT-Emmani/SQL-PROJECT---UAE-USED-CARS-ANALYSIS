@@ -31,8 +31,8 @@ Power Bi
 ### Data Cleaning/Preparation
 In the initial data preparation phase, I performed the following tasks:
 
-- Created a new sheet to duplicate the original data for the cleaning.
-- Inspected the data for any missing values by using the column header row of each columns.
+- Created a project database in Mysql.
+- Imported the csv file
 - Data cleaning and formatting by ensuring the data is consisitent and clean with respect to data types, data format and valued used.
 - Added new columns to extract the month and days from the Order date to answer some of the questions for the analysis. The Text function was used for this extraction; =TEXT([@[order_date]],"mmmm") and =TEXT([@[order_date]], "dddd").
 
