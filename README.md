@@ -22,8 +22,8 @@ Dataset can be found in Kaggle [download](https://www.kaggle.com/datasets/mohame
 SQL 
 - Data Cleaning
 - Aggregation.
-- The use of CASE Statment to group the yearly mileage into High or Low
-- Extracting of columns for visualization
+- The use of CASE Statment to group the yearly mileage into High or Low.
+- Extracting of columns needed for the visualization.
 
 Power Bi
 - Visualization
