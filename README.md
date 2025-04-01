@@ -11,17 +11,21 @@
 
 ### Project Overview
 
-This data analysis project aims to provide insights into the sales performance of Plato's Pizza for the year 2015. By analyzing various aspects of the sales data, I seek to identify trends, make data-driven recommendations, and gain a deeper understanding of the company's performance. 
+This data analysis project aims to provide insights into Used cars in United Arab Emirates (UAE) . By analyzing this data, I seek to identify the market trends and popularity of used cars based on thier mileage, price, age and location, and make data-driven recommendations. 
 
 
 ### Data Sources
-Sales Data: The primary dataset used for this analysis is the "Pizza Sales.xlsx" file, containing detailed information about each sale made by Plato's Pizza.
-Dataset can be found in Kaggle [download](https://www.kaggle.com/datasets/shilongzhuang/pizza-sales)
+UAE Used cars Data: The primary dataset used for this analysis is the "uae_used_cars_10.csv" file, containing detailed information on used cars in UAE like the Make, Model, Year, Mileage, Price, Location and Sellers decription.
+Dataset can be found in Kaggle [download](https://www.kaggle.com/datasets/mohamedsaad254/uae-used-cars-analysis-full-project-v1-0)
 
 ### Tools Used
-Excel 
+SQL 
 - Data Cleaning
-- Data Analysis with the use of Pivot tables.
+- Aggregation.
+- The use of CASE Statment to group the yearly mileage into High or Low
+- Extracting of columns for visualization
+
+Power Bi
 - Visualization
 
 ### Data Cleaning/Preparation
