@@ -11,7 +11,7 @@
 
 ### Project Overview
 
-This data analysis project aims to provide insights into Used cars in United Arab Emirates (UAE) . By analyzing this data, I seek to identify the market trends and popularity of used cars based on thier mileage, price, age and location, and make data-driven recommendations. 
+This data analysis project aims to provide insights into Used cars in United Arab Emirates (UAE) . By analyzing this data, I seek to identify the market trends and popularity of used cars based on thier mileage, price, age, location, and make data-driven recommendations for buyers. 
 
 
 ### Data Source
