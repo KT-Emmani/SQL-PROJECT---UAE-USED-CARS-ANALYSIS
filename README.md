@@ -44,27 +44,35 @@ In the initial data preparation phase, I performed the following tasks:
 
   ``` sql
   SELECT 
-    	 TRIM(Location) AS State,
-    	 Make,
-    	 Model,
-    	 `Body Type`,
-    	 Price,
-    	 Mileage,
-    	 Year,
-    	 YEAR(CURDATE()) - `year` AS Years_Used,
-    	 ROUND(Mileage / (YEAR(CURDATE()) - `year`), 0) AS Yearly_Mileage,
-    	 CASE 
-                 WHEN ROUND(Mileage / (YEAR(CURDATE()) - `year`), 0)  < 12000 THEN 'LOW'
-                 ELSE 'HIGH'
-                 END AS Mileage_Status,
-           COUNT(Make) AS No_of_Cars,
-           Cylinders,
-           `Fuel Type`,
-           Transmission,
-           Color,
-           `Description`
+	 TRIM(Location) AS State,
+	 Make,
+	 Model,
+	 `Body Type`,
+	 Price,
+	 Mileage,
+	 Year,
+	 YEAR(CURDATE()) - `year` AS Years_Used,
+	 ROUND(Mileage / (YEAR(CURDATE()) - `year`), 0) AS Yearly_Mileage,
+	 CASE 
+	   WHEN ROUND(Mileage / (YEAR(CURDATE()) - `year`), 0)  < 12000 THEN 'LOW'
+	   ELSE 'HIGH'
+	   END AS Mileage_Status,
+	 CASE
+         WHEN Cylinders LIKE 3 THEN 3
+         WHEN Cylinders LIKE 4 THEN 4
+         WHEN Cylinders LIKE 5 THEN 5
+         WHEN Cylinders LIKE 6 THEN 6
+         WHEN Cylinders LIKE 8 THEN 8
+         WHEN Cylinders LIKE 10 THEN 10
+         WHEN Cylinders LIKE 12 THEN 12
+         ELSE 'Other'
+        END AS Cylinder_Types, 
+	 `Fuel Type`,
+	 Transmission,
+	 Color,
+	 `Description`
   FROM uae_used_cars_10k
-  GROUP BY State, make, Model, `Body Type`, Price, Mileage, `Year`, Cylinders, `Fuel Type`, Transmission, Color, `Description`
+  GROUP BY State, make, Model, `Body Type`, Price, Mileage, `Year`, Cylinder_Types, `Fuel Type`, Transmission, Color, `Description`
   ORDER BY Price DESC;
   ```
   
@@ -90,7 +98,8 @@ The Insight to this data are as follows;
 - Average Mileage: 27,912
 - Average Age of used cars: 11
 
-- Fridays are the busiest day of the week with a total of 8,106 orders and a revenue generation of $ 136k.
+- What is the top 10 popular Brands;
+  From the data the most popular brand in UAE is the Mercedes-Benz 
   
 
 ![Data Model - Pizza Sales - Excel 1_24_2025 7_51_16 PM](https://github.com/user-attachments/assets/68b785d3-98ff-4a52-aa13-fec7ffb1566f)
