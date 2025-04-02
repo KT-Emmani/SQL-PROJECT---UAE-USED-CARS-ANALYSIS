@@ -44,40 +44,42 @@ In the initial data preparation phase, I performed the following tasks:
 
   ``` sql
   SELECT 
-  	 TRIM(Location) AS State,
-  	 Make,
-  	 Model,
-  	 `Body Type`,
-  	 Price,
-  	 Mileage,
-  	 Year,
-  	 YEAR(CURDATE()) - `year` AS Years_Used,
-  	 ROUND(Mileage / (YEAR(CURDATE()) - `year`), 0) AS Yearly_Mileage,
-  	 CASE 
-  	   WHEN ROUND(Mileage / (YEAR(CURDATE()) - `year`), 0)  < 12000 THEN 'LOW'
-  	   ELSE 'HIGH'
-  	   END AS Mileage_Status,
-     COUNT(Make) AS No_of_Cars,
-     Cylinders,
-     `Fuel Type`,
-     Transmission,
-     Color,
-     `Description`
+    	 TRIM(Location) AS State,
+    	 Make,
+    	 Model,
+    	 `Body Type`,
+    	 Price,
+    	 Mileage,
+    	 Year,
+    	 YEAR(CURDATE()) - `year` AS Years_Used,
+    	 ROUND(Mileage / (YEAR(CURDATE()) - `year`), 0) AS Yearly_Mileage,
+    	 CASE 
+                 WHEN ROUND(Mileage / (YEAR(CURDATE()) - `year`), 0)  < 12000 THEN 'LOW'
+                 ELSE 'HIGH'
+                 END AS Mileage_Status,
+           COUNT(Make) AS No_of_Cars,
+           Cylinders,
+           `Fuel Type`,
+           Transmission,
+           Color,
+           `Description`
   FROM uae_used_cars_10k
   GROUP BY State, make, Model, `Body Type`, Price, Mileage, `Year`, Cylinders, `Fuel Type`, Transmission, Color, `Description`
   ORDER BY Price DESC;
   ```
   
 
-- Created a new sheet to use Pivot Tables for the analysis according to the questions asked.
-
 ### Exploratory Data Analysis
-EDA involved exploring the sales data to answer key questions, such as:
+EDA involved exploring the data to answer key questions, such as:
 
-- What is the overall sales trend?
-- Which category of pizza are customers favorite?
-- What are the peak sales periods?
-- Plato's top selling pizza types?
+- What is the total value of used cars in UAE?
+- What is the total number of used cars in UAE?
+- What is the average age of used cars in UAE
+- What is the top 10 popular Brands?
+- What is the top 7 expensive cars?
+- What is the popular body type of cars?
+- What is the average mileage of each brand?
+- What is the popular color, fuel types and transmission of used cars in UAE? 
 
 
 ### Results/Findings
