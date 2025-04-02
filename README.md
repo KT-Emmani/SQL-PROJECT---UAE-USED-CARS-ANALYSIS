@@ -33,19 +33,41 @@ In the initial data preparation phase, I performed the following tasks:
 
 - Created a project database in Mysql.
 - Imported the csv file
-- Data cleaning and formatting by ensuring the data is consisitent and clean with respect to data types, data format
+- Data cleaning and formatting by ensuring the data is consisitent and clean with respect to data types and data format.
+
   ``` sql
   DESCRIBE uae_used_cars_10k;
   ```
   
-- Added new columns to extract the month and days from the Order date to answer some of the questions for the analysis. The Text function was used for this extraction; =TEXT([@[order_date]],"mmmm") and =TEXT([@[order_date]], "dddd").
+- The dataset does not contain empty or null data.
+- Extracted columns for my visualization by using this sql query;
 
-![Data Model - Pizza Sales - Excel 1_24_2025 6_40_44 PM](https://github.com/user-attachments/assets/0c609f73-16a6-45ef-b878-164ce9bc763d)
-
-
-- Added a column to group the order time, created a table and used the Vlookup Function thus =VLOOKUP([@[order_time]],$S$6:$U$30,3,1) for the Hourly Bucket column.
+  ``` sql
+  SELECT 
+  	 TRIM(Location) AS State,
+  	 Make,
+  	 Model,
+  	 `Body Type`,
+  	 Price,
+  	 Mileage,
+  	 Year,
+  	 YEAR(CURDATE()) - `year` AS Years_Used,
+  	 ROUND(Mileage / (YEAR(CURDATE()) - `year`), 0) AS Yearly_Mileage,
+  	 CASE 
+  	   WHEN ROUND(Mileage / (YEAR(CURDATE()) - `year`), 0)  < 12000 THEN 'LOW'
+  	   ELSE 'HIGH'
+  	   END AS Mileage_Status,
+     COUNT(Make) AS No_of_Cars,
+     Cylinders,
+     `Fuel Type`,
+     Transmission,
+     Color,
+     `Description`
+  FROM uae_used_cars_10k
+  GROUP BY State, make, Model, `Body Type`, Price, Mileage, `Year`, Cylinders, `Fuel Type`, Transmission, Color, `Description`
+  ORDER BY Price DESC;
+  ```
   
- ![Data Model - Pizza Sales - Excel 1_24_2025 5_49_06 PM](https://github.com/user-attachments/assets/a1a5f796-9e63-450a-887a-2d1701d34ecb)
 
 - Created a new sheet to use Pivot Tables for the analysis according to the questions asked.
 
