@@ -4,7 +4,7 @@
 
 - [Project Overview](#project-overview)
 
-- [Data Sources](#data-sources)
+- [Data Sources](#data-source)
 
 - [Recommendations](#recommendations)
 
@@ -14,7 +14,7 @@
 This data analysis project aims to provide insights into Used cars in United Arab Emirates (UAE) . By analyzing this data, I seek to identify the market trends and popularity of used cars based on thier mileage, price, age and location, and make data-driven recommendations. 
 
 
-### Data Sources
+### Data Source
 UAE Used cars Data: The primary dataset used for this analysis is the "uae_used_cars_10.csv" file, containing detailed information on used cars in UAE like the Make, Model, Year, Mileage, Price, Location and Sellers decription.
 Dataset can be found in Kaggle [download](https://www.kaggle.com/datasets/mohamedsaad254/uae-used-cars-analysis-full-project-v1-0)
 
@@ -33,7 +33,11 @@ In the initial data preparation phase, I performed the following tasks:
 
 - Created a project database in Mysql.
 - Imported the csv file
-- Data cleaning and formatting by ensuring the data is consisitent and clean with respect to data types, data format and valued used.
+- Data cleaning and formatting by ensuring the data is consisitent and clean with respect to data types, data format
+  ``` sql
+  DESCRIBE uae_used_cars_10k;
+  ```
+  
 - Added new columns to extract the month and days from the Order date to answer some of the questions for the analysis. The Text function was used for this extraction; =TEXT([@[order_date]],"mmmm") and =TEXT([@[order_date]], "dddd").
 
 ![Data Model - Pizza Sales - Excel 1_24_2025 6_40_44 PM](https://github.com/user-attachments/assets/0c609f73-16a6-45ef-b878-164ce9bc763d)
