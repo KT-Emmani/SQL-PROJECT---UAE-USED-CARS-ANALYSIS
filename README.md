@@ -85,10 +85,10 @@ EDA involved exploring the data to answer key questions, such as:
 ### Results/Findings
 The Insight to this data are as follows;
 
-- Total Revenue: $ 817.8K
-- Total Quantity Sold: 49.5K
-- Total Orders: 21.35K
-- Average Order Value: $ 38.31
+- Total Value of Used Cars: AED 2.24Bn
+- Total Number of Cars: 9,154
+- Average Mileage: 27,912
+- Average Age of used cars: 11
 
 - Fridays are the busiest day of the week with a total of 8,106 orders and a revenue generation of $ 136k.
   
