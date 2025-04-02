@@ -98,18 +98,50 @@ The Insight to this data are as follows;
 - Average Mileage: 27,912
 - Average Age of used cars: 11
 
+
+
+  
+
 - What is the top 10 popular Brands;
-  From the data the most popular brand in UAE is the Mercedes-Benz 
+  From the data the most popular brand in UAE is the Mercedes-Benz.
+
+  ``` SQL
+  SELECT 
+		Make,
+	      Count(Make) AS No_of_Used_Cars
+  FROM uae_used_cars_10k
+  GROUP BY Make
+  ORDER BY COUNT(Make) DESC
+  LIMIT 10;
+  ```
+
   
-
-![Data Model - Pizza Sales - Excel 1_24_2025 7_51_16 PM](https://github.com/user-attachments/assets/68b785d3-98ff-4a52-aa13-fec7ffb1566f)
-
-
-
-- July was the busiest month with a total of 4,301 orders and a revenue generation of $ 72.5K.
   
+  ![Power BI Desktop 4_2_2025 8_46_50 PM](https://github.com/user-attachments/assets/ec0fe1b9-0851-4701-8db3-82c6674f3070)
 
-![Data Model - Pizza Sales - Excel 1_24_2025 7_52_38 PM](https://github.com/user-attachments/assets/4c7daf5c-4413-4b3c-97d9-9e98d75c1d5b)
+
+
+
+
+- What is the top 7 expensive cars?
+  From the data the most expensive brand is Maclaren and the models P1, Elva and Senna holds the top 5 with Mercedes-Benz slr and Ferrari 599 taking the 6th and 7th spot.
+
+``` SQL
+SELECT 
+    Make,
+    Model,
+    Year,
+    SUM(Price) AS 'Value',
+    Description
+FROM uae_used_cars_10K
+GROUP BY Make, Model, Year, `Description`
+ORDER BY SUM(Price) DESC
+LIMIT 7;
+```
+   
+  
+![Power BI Desktop 4_2_2025 9_14_35 PM](https://github.com/user-attachments/assets/440296ec-fa1e-4352-9212-0cf29556e661)
+
 
 
 
