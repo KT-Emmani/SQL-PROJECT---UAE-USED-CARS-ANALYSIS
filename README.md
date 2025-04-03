@@ -19,11 +19,11 @@ UAE Used cars Data: The primary dataset used for this analysis is the "uae_used_
 Dataset can be found in Kaggle [download](https://www.kaggle.com/datasets/mohamedsaad254/uae-used-cars-analysis-full-project-v1-0)
 
 ### Tools Used
-SQL 
+SQL
 - Data Cleaning
 - Aggregation.
 - The use of CASE Statment to group the yearly mileage into High or Low.
-- Extracting of columns needed for the visualization.
+- Extracting of data in columns needed for the visualization.
 
 Power Bi
 - Visualization
@@ -39,8 +39,25 @@ In the initial data preparation phase, I performed the following tasks:
   DESCRIBE uae_used_cars_10k;
   ```
   
-- The dataset does not contain empty or null data.
-- Extracted columns for my visualization by using this sql query;
+- The dataset contain an empty, none and unkown data in the Cylinder column, which I grouped them as Others using the CASE Statement query below,
+
+``` SQL
+SELECT Cylinders, 
+       CASE
+         WHEN Cylinders LIKE 3 THEN 3
+         WHEN Cylinders LIKE 4 THEN 4
+         WHEN Cylinders LIKE 5 THEN 5
+         WHEN Cylinders LIKE 6 THEN 6
+         WHEN Cylinders LIKE 8 THEN 8
+         WHEN Cylinders LIKE 10 THEN 10
+         WHEN Cylinders LIKE 12 THEN 12
+         ELSE 'Others'
+        END AS Cylinder_Types 
+FROM uae_used_cars_10k
+GROUP BY Cylinders;
+```
+
+- Extracted the data columns need for my visualization by using this sql query;
 
   ``` sql
   SELECT 
@@ -93,9 +110,9 @@ EDA involved exploring the data to answer key questions, such as:
 ### Results/Findings
 The Insight to this data are as follows;
 
-- Total Value of Used Cars: AED 2.24Bn
-- Total Number of Cars: 9,154
-- Average Mileage: 27,912
+- Total Value of Used Cars: AED 2.45Bn
+- Total Number of Cars: 10,000
+- Average Mileage: 27,821
 - Average Age of used cars: 11
 
 
@@ -104,6 +121,8 @@ The Insight to this data are as follows;
 
 - What is the top 10 popular Brands;
   From the data the most popular brand in UAE is the Mercedes-Benz.
+  
+  Below is the SQL query used;
 
   ``` SQL
   SELECT 
@@ -117,7 +136,8 @@ The Insight to this data are as follows;
 
   
   
-  ![Power BI Desktop 4_2_2025 8_46_50 PM](https://github.com/user-attachments/assets/ec0fe1b9-0851-4701-8db3-82c6674f3070)
+
+![Top 10 Brands in UAE](https://github.com/user-attachments/assets/afa21a72-96dd-44f6-983a-eafee24d79f2)
 
 
 
@@ -125,6 +145,9 @@ The Insight to this data are as follows;
 
 - What is the top 7 expensive cars?
   From the data the most expensive brand is Maclaren and the models P1, Elva and Senna holds the top 5 with Mercedes-Benz slr and Ferrari 599 taking the 6th and 7th spot.
+
+Below is the SQL query used;
+
 
 ``` SQL
 SELECT 
@@ -140,22 +163,34 @@ LIMIT 7;
 ```
    
   
-![Power BI Desktop 4_2_2025 9_14_35 PM](https://github.com/user-attachments/assets/440296ec-fa1e-4352-9212-0cf29556e661)
+![Top 7 Expensive Cars In UAE](https://github.com/user-attachments/assets/78a5ec43-537f-40db-b9d1-189499782f18)
 
 
 
+- What is the popular body type of cars?
+  From the data, SUVs are the most preferred car body type in UAE with over 4,600 cars.
 
-- Among the categories of pizza, most of Plato Pizza's customers preferred the Classic with 14,888 quantity sold and generating 27% of its revenue for the year.
+  Below is the SQL query used;
+
+``` SQL
+SELECT 
+	`Body Type`,
+    	COUNT(`Body Type`) AS No_of_Cars
+FROM uae_used_cars_10k
+GROUP BY `Body Type`
+ORDER BY COUNT(`Body Type`) DESC;
+``` 
 
 
-![Data Model - Pizza Sales - Excel 1_24_2025 7_50_50 PM](https://github.com/user-attachments/assets/1237936e-8846-4829-9cc9-5d5fdc123d5e)
+![Popular Body types preferred in UAE](https://github.com/user-attachments/assets/21e51477-7cb9-4b1f-ba0c-d066eec98e10)
 
 
-- 12pm - 1pm tends to be the busiest time of the day for ordering pizza by their customers.
   
+- What is the popular color, fuel types, cylinder and transmission of used cars in UAE?
+  From the data, it is observed that the most preferred color, fuel type, cylinder and transmission are White, Gasoline, 6 Cylinder and Automatic transmission respectively.
 
-![Data Model - Pizza Sales - Excel 1_24_2025 7_50_15 PM](https://github.com/user-attachments/assets/d7c5e58d-fc65-4f5b-8098-ee58536e43f6)
-
+   Below is the SQL query used;
+  
 
 - Plato's Pizza Top 3 Pizza types are;
   
