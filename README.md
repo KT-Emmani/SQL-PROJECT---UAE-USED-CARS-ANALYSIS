@@ -186,28 +186,16 @@ ORDER BY COUNT(`Body Type`) DESC;
 
 
   
-- What is the popular color, fuel types, cylinder and transmission of used cars in UAE?
-  From the data, it is observed that the most preferred color, fuel type, cylinder and transmission are White, Gasoline, 6 Cylinder and Automatic transmission respectively.
-
-   Below is the SQL query used;
-  
-
-- Plato's Pizza Top 3 Pizza types are;
-  
-   The Thai Chicken Pizza
-  
-   The Barbecue Chicken Pizza
-  
-   The California Chicken Pizza
-
-
-
-![Data Model - Pizza Sales - Excel 1_24_2025 7_49_41 PM](https://github.com/user-attachments/assets/a5672950-2fe1-4bc0-97a1-0b5f6c530286)
 
 
 ### Dashboard
 
-![Data Model - Pizza Sales - Excel 1_24_2025 7_25_30 PM](https://github.com/user-attachments/assets/94fedf2e-ddb6-4773-a5ad-725f8b36cd5f)
+
+![UAE Used Cars - Dashbord](https://github.com/user-attachments/assets/2d591927-188a-4742-8a1c-3beaedd1fda5)
+
+
+
+![UAE Used cars Insight](https://github.com/user-attachments/assets/1734d32f-476c-499f-848e-b93145e8b8fd)
 
 
   
