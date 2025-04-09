@@ -59,22 +59,34 @@ GROUP BY Cylinders;
 
 - Extracted the data columns need for my visualization by using this sql query;
 
-  ``` sql
-  SELECT 
+``` SQL
+WITH Used_Cars AS
+ (
+ SELECT 
 	 TRIM(Location) AS State,
 	 Make,
 	 Model,
 	 `Body Type`,
 	 Price,
+     CASE	
+		 WHEN Price <= 49999 THEN 'Less Than 50K'
+         WHEN Price BETWEEN 49999 AND 120000 THEN '50K - 119K'
+         WHEN PRICE BETWEEN 119999 AND 250000 THEN '120K - 249K'
+         WHEN Price BETWEEN 249999 AND 500000 THEN '250K - 499K'
+         WHEN Price BETWEEN 499999 AND 1000000 THEN '500K - 999K'
+         ELSE '1M Or Above'
+	  END AS Price_Range,
 	 Mileage,
-	 Year,
+     CASE	
+		 WHEN Mileage <= 74999 THEN 'Less Than 75K'
+         WHEN Mileage BETWEEN 74999 AND 150000 THEN '75K - 149K'
+         WHEN Mileage BETWEEN 149999 AND 225000 THEN '150K - 224k'
+         ELSE '225k Or Above'
+	  END AS Mileage_Range,
+     COUNT(*) AS No_used_Cars,
+	 `Year`,
 	 YEAR(CURDATE()) - `year` AS Years_Used,
-	 ROUND(Mileage / (YEAR(CURDATE()) - `year`), 0) AS Yearly_Mileage,
-	 CASE 
-	   WHEN ROUND(Mileage / (YEAR(CURDATE()) - `year`), 0)  < 12000 THEN 'LOW'
-	   ELSE 'HIGH'
-	   END AS Mileage_Status,
-	 CASE
+	 CASE -- To group the empty, none and unkown fields in the cylinder column to unkown--
          WHEN Cylinders LIKE 3 THEN 3
          WHEN Cylinders LIKE 4 THEN 4
          WHEN Cylinders LIKE 5 THEN 5
@@ -82,17 +94,64 @@ GROUP BY Cylinders;
          WHEN Cylinders LIKE 8 THEN 8
          WHEN Cylinders LIKE 10 THEN 10
          WHEN Cylinders LIKE 12 THEN 12
-         ELSE 'Other'
+         ELSE 'Unkown' 
         END AS Cylinder_Types, 
+	  -- To extract a substring from the Decription column (string) to know whether a used cars has an accident history or not --
+	 TRIM(REPLACE(RIGHT (`Description`, LENGTH(`description`) - POSITION(':' IN `Description`)), '.' , '')) AS Type_of_Damaged,
 	 `Fuel Type`,
 	 Transmission,
-	 Color,
+     Color,
 	 `Description`
   FROM uae_used_cars_10k
-  GROUP BY State, make, Model, `Body Type`, Price, Mileage, `Year`, Cylinder_Types, `Fuel Type`, Transmission, Color, `Description`
-  ORDER BY Price DESC;
-  ```
+  GROUP BY State, make, Model, `Body Type`, Price, Price_Range, Mileage, Mileage_Range, `Year`, Cylinder_Types, `Fuel Type`, Type_of_Damaged, Transmission, Color, `Description`
+  ORDER BY Price DESC
+  )
   
+  SELECT 
+  State,
+  Make,
+  Model,
+  `Body Type`,
+  No_used_Cars,
+  COUNT(No_used_cars) OVER (ORDER BY `Year`, No_used_cars) AS Cum_No_of_cars,
+  Price,
+  Price_Range,
+  ROUND(AVG(Price) OVER (PARTITION BY Model, `Body Type`), 2)  AS Avg_Price,
+  CASE 
+		WHEN Price > ROUND(AVG(Price) OVER (PARTITION BY Model, `Body Type`), 2) THEN 'Above_AvgPrice'
+        WHEN Price < ROUND(AVG(Price) OVER (PARTITION BY Model, `Body Type`), 2) THEN 'Below_AvgPrice'
+        ELSE 'AvgPrice'
+	END AS Avg_PricePos,
+  Mileage,
+  Mileage_Range,
+  ROUND(AVG(Mileage) OVER (PARTITION BY Model, `Body Type`), 0) AS Avg_Mileage,
+  CASE 
+		WHEN Mileage > ROUND(AVG(Mileage) OVER (PARTITION BY Model, `Body Type`), 0) THEN 'Above_AvgMileage'
+        WHEN Mileage < ROUND(AVG(Mileage) OVER (PARTITION BY Model, `Body Type`), 0) THEN 'Below_AvgMileage'
+        ELSE 'Avg_Mileage'
+	END AS Avg_MileagePos,
+  `Year`,
+  Years_Used,
+  CASE	
+		 WHEN Years_Used <= 4 THEN '0 - 4yrs'
+         WHEN Years_Used BETWEEN 4 AND 11 THEN '5yrs - 10yrs'
+         WHEN Years_Used BETWEEN 10 AND 15 THEN '11yrs - 15yrs'
+         ELSE '16yrs -20yrs'
+	  END AS Age_Range,
+  ROUND(AVG(Years_Used) OVER (PARTITION BY Model, `Body Type`), 0) AS Avg_Years_of_car,
+  CASE 
+		WHEN Years_Used > ROUND(AVG(Years_Used) OVER (PARTITION BY Model, `Body Type`), 0) THEN 'Above_AvgAge'
+        WHEN Years_Used < ROUND(AVG(Years_Used) OVER (PARTITION BY Model, `Body Type`), 0) THEN 'Below_AvgAge'
+        ELSE 'Avg_Age'
+	END AS Avg_AgePos,
+  Cylinder_Types,
+  `Fuel Type`,
+  Transmission,
+  Color,
+  Type_of_Damaged,
+  `Description`
+  FROM Used_Cars;
+```
 
 ### Exploratory Data Analysis
 EDA involved exploring the data to answer key questions, such as:
