@@ -4,20 +4,27 @@
 
 - [Project Overview](#project-overview)
 
-- [Data Sources](#data-source)
+- [Data Source](#data-source)
+
+- [Data Cleaning](#data-cleaning)   
+
+- [Exploratory Data Analysis](#exploratory-data-analysis)  
 
 - [Recommendations](#recommendations)
 
 
-### Project Overview
+## Project Overview
 
-This data analysis project aims to provide insights into Used cars in United Arab Emirates (UAE) . By analyzing this data, I seek to identify the market trends and popularity of used cars based on thier mileage, price, age, location, and make data-driven recommendations for buyers. 
+This data analysis project aims to provide insights into Used cars in United Arab Emirates (UAE) . By analyzing this data, I seek to identify the market trends and popularity of used cars based on thier mileage, price, age, location, and make data-driven recommendations for sellers and buyers. 
 
 
-### Data Source
-UAE Used cars Data: The primary dataset used for this analysis is the "uae_used_cars_10.csv" file, containing detailed information on used cars in UAE like the Make, Model, Year, Mileage, Price, Location and Sellers decription.
+## Data Source
+- UAE Used cars Data: The primary dataset used for this analysis is the "uae_used_cars_10.csv" file, containing detailed information on used cars in UAE like the Make, Model, Year, Mileage, Price, Location and Sellers decription.
 Dataset can be found in Kaggle [download](https://www.kaggle.com/datasets/mohamedsaad254/uae-used-cars-analysis-full-project-v1-0)
 
+- 
+
+## Data Cleaning
 ### Tools Used
 SQL
 - Data Cleaning
@@ -171,7 +178,7 @@ The Insight to this data are as follows;
 
 - Total Value of Used Cars: AED 2.45Bn
 - Total Number of Cars: 10,000
-- Average Mileage: 27,821
+- Average Mileage: 155.16K
 - Average Age of used cars: 11
 
 
@@ -193,20 +200,14 @@ The Insight to this data are as follows;
   LIMIT 10;
   ```
 
-  
-  
-
-![Top 10 Brands in UAE](https://github.com/user-attachments/assets/afa21a72-96dd-44f6-983a-eafee24d79f2)
+  ![Top 10 Brands](https://github.com/user-attachments/assets/0b13fbc9-fadb-4fdb-90e6-1a7bd3e1ced9)
 
 
-
-
-
-- What is the top 7 expensive cars?
-  From the data the most expensive brand is Maclaren and the models P1, Elva and Senna holds the top 5 with Mercedes-Benz slr and Ferrari 599 taking the 6th and 7th spot.
+- What is the top 10 expensive cars?
+ 
+From the data the most expensive brand is Maclaren and the models P1, Elva and Senna holds the top 5 with Mercedes-Benz slr and Ferrari 599 taking the 6th to 10th spot.
 
 Below is the SQL query used;
-
 
 ``` SQL
 SELECT 
@@ -218,18 +219,19 @@ SELECT
 FROM uae_used_cars_10K
 GROUP BY Make, Model, Year, `Description`
 ORDER BY SUM(Price) DESC
-LIMIT 7;
+LIMIT 10;
 ```
    
-  
-![Top 7 Expensive Cars In UAE](https://github.com/user-attachments/assets/78a5ec43-537f-40db-b9d1-189499782f18)
+![Top 10 Expensive Cars](https://github.com/user-attachments/assets/50b62d17-acfc-4cd6-93b4-e58bcfd9e426)
+
 
 
 
 - What is the popular body type of cars?
-  From the data, SUVs are the most preferred car body type in UAE with over 4,600 cars.
+  
+From the data, SUVs are the most preferred car body type in UAE with over 4,607 used cars.
 
-  Below is the SQL query used;
+Below is the SQL query used;
 
 ``` SQL
 SELECT 
@@ -238,23 +240,26 @@ SELECT
 FROM uae_used_cars_10k
 GROUP BY `Body Type`
 ORDER BY COUNT(`Body Type`) DESC;
-``` 
+```
 
 
-![Popular Body types preferred in UAE](https://github.com/user-attachments/assets/21e51477-7cb9-4b1f-ba0c-d066eec98e10)
+![Body Type](https://github.com/user-attachments/assets/31dce767-0bf8-4945-825c-80ba07f10755)
 
 
-  
+
+
 
 
 ### Dashboard
 
 
-![UAE Used Cars - Dashbord](https://github.com/user-attachments/assets/2d591927-188a-4742-8a1c-3beaedd1fda5)
+![Dashboard](https://github.com/user-attachments/assets/c068be70-2446-4ee9-bfa1-570b4f84bb58)
 
 
+![Insights](https://github.com/user-attachments/assets/f99d2890-29fa-4cd4-8b48-dff35d1b79de)
 
-![UAE Used cars Insight](https://github.com/user-attachments/assets/1734d32f-476c-499f-848e-b93145e8b8fd)
+
+![Records](https://github.com/user-attachments/assets/eefa55c1-e399-4733-882c-1cabedb732a6)
 
 
   
