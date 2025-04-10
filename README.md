@@ -6,7 +6,7 @@
 
 - [Data Source](#data-source)
 
-- [Data Cleaning](#data-cleaning)   
+- [Data Cleaning & Preaparation](data-cleaningpreparation) 
 
 - [Exploratory Data Analysis](#exploratory-data-analysis)  
 
@@ -15,38 +15,36 @@
 
 ## Project Overview
 
-This data analysis project aims to provide insights into Used cars in United Arab Emirates (UAE) . By analyzing this data, I seek to identify the market trends and popularity of used cars based on thier mileage, price, age, location, and make data-driven recommendations for sellers and buyers. 
+This data analysis project aims to provide insights into Used cars in United Arab Emirates (UAE) . By analyzing this data, I seek to identify the market trends, popularity and what features of used cars matters most in determining the price based on thier mileage, price, age, location, and make data-driven recommendations for sellers and buyers. 
 
 
 ## Data Source
-- UAE Used cars Data: The primary dataset used for this analysis is the "uae_used_cars_10.csv" file, containing detailed information on used cars in UAE like the Make, Model, Year, Mileage, Price, Location and Sellers decription.
+UAE Used cars Data: The primary dataset used for this analysis is the "uae_used_cars_10.csv" file, having 12 columns with detailed information on used cars in UAE like the Make, Model, Year, Mileage, Price, Location, Cylinder, Body type, Transmission, Fuel Type, color and description.
 Dataset can be found in Kaggle [download](https://www.kaggle.com/datasets/mohamedsaad254/uae-used-cars-analysis-full-project-v1-0)
 
-- 
+### Sample Dataset
 
-## Data Cleaning
+![Used cars dataset sample](https://github.com/user-attachments/assets/c38c47e4-bdec-4b11-8529-ab6e71aad463)
+
+
+
+## Data Cleaning & Preparation
 ### Tools Used
-SQL
-- Data Cleaning
-- Aggregation.
-- The use of CASE Statment to group the yearly mileage into High or Low.
-- Extracting of data in columns needed for the visualization.
+- SQL for cleaning, manipulation, and extracting of data
+- Power Bi for visualization
 
-Power Bi
-- Visualization
-
-### Data Cleaning/Preparation
+### Cleaning & Preparation
 In the initial data preparation phase, I performed the following tasks:
 
 - Created a project database in Mysql.
-- Imported the csv file
-- Data cleaning and formatting by ensuring the data is consisitent and clean with respect to data types and data format.
+- Imported the csv file.
+- I checked the data types of the columns;
 
   ``` sql
   DESCRIBE uae_used_cars_10k;
   ```
   
-- The dataset contain an empty, none and unkown data in the Cylinder column, which I grouped them as Others using the CASE Statement query below,
+- The dataset contain an empty, none and unkown data in the Cylinder column, which I grouped them all as UNKOWN using the CASE Statement query below,
 
 ``` SQL
 SELECT Cylinders, 
@@ -58,10 +56,20 @@ SELECT Cylinders,
          WHEN Cylinders LIKE 8 THEN 8
          WHEN Cylinders LIKE 10 THEN 10
          WHEN Cylinders LIKE 12 THEN 12
-         ELSE 'Others'
+         ELSE 'Unkown'
         END AS Cylinder_Types 
 FROM uae_used_cars_10k
 GROUP BY Cylinders;
+```
+- I added new coloumns for average price, average mileage and average age for the unique model with the use of window function and grouped them into class with the use of a CASE Statement.
+
+- I extracted unique substrings for accident type from the description column;
+
+``` SQL
+SELECT 
+TRIM(REPLACE(RIGHT (`Description`, LENGTH(`description`) - POSITION(':' IN `Description`)), '.' , '')) AS Damaged_Type
+FROM Uae_used_cars_10k
+GROUP BY Damaged_Type;
 ```
 
 - Extracted the data columns need for my visualization by using this sql query;
@@ -159,6 +167,12 @@ WITH Used_Cars AS
   `Description`
   FROM Used_Cars;
 ```
+
+### Final Dataset
+
+![used cars dataset - worked  ](https://github.com/user-attachments/assets/cafcd53e-0082-4830-ab0b-1243b087e08f)
+
+
 
 ### Exploratory Data Analysis
 EDA involved exploring the data to answer key questions, such as:
