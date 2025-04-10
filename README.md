@@ -6,7 +6,7 @@
 
 - [Data Source](#data-source)
 
-- [Data Cleaning & Preparation](data-cleaning&preparation) 
+- [Data Preparation](data-preparation) 
 
 - [Exploratory Data Analysis](#exploratory-data-analysis)  
 
@@ -28,12 +28,13 @@ Dataset can be found in Kaggle [download](https://www.kaggle.com/datasets/mohame
 
 
 
-## Data Cleaning & Preparation
+## Data Preparation
+
 ### Tools Used
 - SQL for cleaning, manipulation, and extracting of data
 - Power Bi for visualization
 
-### Cleaning & Preparation
+### Cleaning 
 In the initial data preparation phase, I performed the following tasks:
 
 - Created a project database in Mysql.
