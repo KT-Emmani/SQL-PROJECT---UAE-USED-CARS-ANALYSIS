@@ -259,17 +259,52 @@ ORDER BY COUNT(`Body Type`) DESC;
 ![Body Type](https://github.com/user-attachments/assets/31dce767-0bf8-4945-825c-80ba07f10755)
 
 
+#### - Popular Fuel type; 
+
+From the data, Gasoline is the preferred fuel type among car owners in UAE with a percentage rate of 97.14%. Next is diesel with 153 cars then electric with 110 cars and hydrid with 23 cars.
+
+Below is the SQL query used;
+
+``` SQL
+SELECT 
+	`Fuel Type`,
+    	COUNT(`Fuel Type`) AS No_of_Cars
+FROM uae_used_cars_10k
+GROUP BY `Fuel Type`
+ORDER BY COUNT(`Fuel Type`) DESC;
+```
+
+
+![Fuel Types](https://github.com/user-attachments/assets/c8d12820-7d37-4637-8f8c-a3d385943c78)
+
+
+#### - Popular Transmission
+
+From the data, 9,626 (96.26%) used cars are automatic transmission while only 374 (3.74%) used cars have manual transmission.
+
+Below is the SQL query used;
+
+``` SQL
+SELECT 
+	Transmission,
+    	COUNT(transmission) AS No_of_Cars
+FROM uae_used_cars_10k
+GROUP BY Transmission
+ORDER BY COUNT(transmission) DESC;
+```
+
+![Transmission type](https://github.com/user-attachments/assets/f535ba28-875b-4abf-bbbb-5f2d74b7ea43)
 
 
 
-
-### Dashboard
+## Dashboard
 
 
 ![Dashboard](https://github.com/user-attachments/assets/c068be70-2446-4ee9-bfa1-570b4f84bb58)
 
 
-![Insights](https://github.com/user-attachments/assets/f99d2890-29fa-4cd4-8b48-dff35d1b79de)
+![Insights](https://github.com/user-attachments/assets/f991a57a-c484-4544-9c56-86b5d01c93b1)
+
 
 
 ![Records](https://github.com/user-attachments/assets/eefa55c1-e399-4733-882c-1cabedb732a6)
