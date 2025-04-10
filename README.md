@@ -20,7 +20,7 @@ This data analysis project aims to provide insights into Used cars in United Ara
 UAE Used cars Data: The primary dataset used for this analysis is the "uae_used_cars_10.csv" file, which contains 12 columns.
 Dataset can be found in Kaggle [download](https://www.kaggle.com/datasets/mohamedsaad254/uae-used-cars-analysis-full-project-v1-0)
 
-### Sample Dataset
+#### Sample Dataset
 
 ![Used cars dataset sample](https://github.com/user-attachments/assets/c38c47e4-bdec-4b11-8529-ab6e71aad463)
 
@@ -43,7 +43,7 @@ In the initial data preparation phase, I performed the following tasks:
   DESCRIBE uae_used_cars_10k;
   ```
   
-- The dataset contain an empty, none and unkown data in the Cylinder column, which I grouped them all as UNKOWN using the CASE Statement query below,
+- The dataset contain an empty, none and unkown data in the Cylinder column, which I grouped them all as UNKNOWN using the CASE Statement query below,
 
 ``` SQL
 SELECT Cylinders, 
@@ -55,7 +55,7 @@ SELECT Cylinders,
          WHEN Cylinders LIKE 8 THEN 8
          WHEN Cylinders LIKE 10 THEN 10
          WHEN Cylinders LIKE 12 THEN 12
-         ELSE 'Unkown'
+         ELSE 'Unknown'
         END AS Cylinder_Types 
 FROM uae_used_cars_10k
 GROUP BY Cylinders;
@@ -183,35 +183,23 @@ After analysing the data, the following observations were found;
 - There are 65 different brands (make) with 488 different models.
 - Manufacturing year of models are from 2005 to 2024 with an average age of 11.
 - Mileage ranges from 10,006 to 299,996 with an average of 155.16K.
-- cheapest car is 
-EDA involved exploring the data to answer key questions, such as:
-
-- What is the total value of used cars in UAE?
-- What is the total number of used cars in UAE?
-- What is the average age of used cars in UAE
-- What is the top 10 popular Brands?
-- What is the top 7 expensive cars?
-- What is the popular body type of cars?
-- What is the average mileage of each brand?
-- What is the popular color, fuel types and transmission of used cars in UAE? 
-
-
-### Results/Findings
-The Insight to this data are as follows;
-
+- The expensive car is Mclaren P1 costing AED 14,686,975 and the cheapest car is Nissan Altima costing AED 7,183.
 - Total Value of Used Cars: AED 2.45Bn
-- Total Number of Cars: 10,000
-- Average Mileage: 155.16K
-- Average Age of used cars: 11
-
-
-
+  
+#### - Used cars per state
   
 
-- Top 10 popular Brands;
+From the data, Dubai has the the most number of used cars with a total number of 8,011 (80.11%) and Fujeirah having the least with a total number of 9 (0.09%).
+
+
+![Number of Cars by State](https://github.com/user-attachments/assets/a6b9da72-c2b0-4d8b-884b-2d476ae2a824)
+
+
+
+#### - Top 10 popular Brands;
 
   
-  From the data the most popular brand in UAE is the Mercedes-Benz with 1,486 used cars listing in the dataset.
+  From the data, the most popular brand is the Mercedes-Benz with a total number of 1,486 contributing 14.86% of used cars in UAE. 
   
   Below is the SQL query used;
 
@@ -228,9 +216,9 @@ The Insight to this data are as follows;
   ![Top 10 Brands](https://github.com/user-attachments/assets/0b13fbc9-fadb-4fdb-90e6-1a7bd3e1ced9)
 
 
-- What is the top 10 expensive cars?
+#### - Top 10 expensive cars;
  
-From the data the most expensive brand is Maclaren and the models P1, Elva and Senna holds the top 5 with Mercedes-Benz slr and Ferrari 599 taking the 6th to 10th spot.
+From the data, the most expensive brand is Maclaren and the models P1, Elva and Senna holds the top 5 with Mercedes-Benz slr and Ferrari 599 taking the 6th to 10th spot.
 
 Below is the SQL query used;
 
@@ -252,9 +240,9 @@ LIMIT 10;
 
 
 
-- What is the popular body type of cars?
+#### - Popular body type of cars;
   
-From the data, SUVs are the most preferred car body type in UAE with over 4,607 used cars.
+From the data, SUVs are the most preferred car body type in UAE with a total number of 4,607 used cars.
 
 Below is the SQL query used;
 
