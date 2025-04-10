@@ -6,7 +6,7 @@
 
 - [Data Source](#data-source)
 
-- [Data Cleaning & Preaparation](data-cleaningpreparation) 
+- [Data Cleaning & Preaparation](data-cleaning-&-preparation) 
 
 - [Exploratory Data Analysis](#exploratory-data-analysis)  
 
