@@ -17,7 +17,7 @@ This data analysis project aims to provide insights into Used cars in United Ara
 
 
 ## Data Source
-UAE Used cars Data: The primary dataset used for this analysis is the "uae_used_cars_10.csv" file, having 12 columns with detailed information on used cars in UAE like the Make, Model, Year, Mileage, Price, Location, Cylinder, Body type, Transmission, Fuel Type, color and description.
+UAE Used cars Data: The primary dataset used for this analysis is the "uae_used_cars_10.csv" file, which contains 12 columns.
 Dataset can be found in Kaggle [download](https://www.kaggle.com/datasets/mohamedsaad254/uae-used-cars-analysis-full-project-v1-0)
 
 ### Sample Dataset
@@ -173,7 +173,17 @@ WITH Used_Cars AS
 
 
 
-### Exploratory Data Analysis
+## Exploratory Data Analysis
+
+### Dataset Overview 
+The analysis is based on a dataset of 10,000 used cars in UAE. The dataset contains information on the make, model, year, price, mileage, body type, cylinder, transmissions, fuel type, color and descriptions to help understand the market trends and popularity of used cars in each state and UAE at large.
+
+After analysing the data, the following observations were found;
+- The data conatined used cars from 8 different states in UAE.
+- There are 65 different brands (make) with 488 different models.
+- Manufacturing year of models are from 2005 to 2024 with an average age of 11.
+- Mileage ranges from 10,006 to 299,996 with an average of 155.16K.
+- cheapest car is 
 EDA involved exploring the data to answer key questions, such as:
 
 - What is the total value of used cars in UAE?
@@ -198,8 +208,10 @@ The Insight to this data are as follows;
 
   
 
-- What is the top 10 popular Brands;
-  From the data the most popular brand in UAE is the Mercedes-Benz.
+- Top 10 popular Brands;
+
+  
+  From the data the most popular brand in UAE is the Mercedes-Benz with 1,486 used cars listing in the dataset.
   
   Below is the SQL query used;
 
