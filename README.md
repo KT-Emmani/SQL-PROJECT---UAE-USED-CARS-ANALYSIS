@@ -199,11 +199,11 @@ From the data, Dubai has the most used cars with a total number of 8,011 (80.11%
 #### - Top 10 popular Brands;
 
   
-  From the data, the most popular brand is the Mercedes-Benz with a total number of 1,486 contributing 14.86% of used cars in UAE. 
+From the data, the most popular brand is the Mercedes-Benz with a total number of 1,486 contributing 14.86% while brands like Baic, Haval, Gac, Morgan, Smart, Saab are unpopular with a total number of 1 car each.
   
-  Below is the SQL query used;
+Below is the SQL query used;
 
-  ``` SQL
+``` SQL
   SELECT 
 		Make,
 	      Count(Make) AS No_of_Used_Cars
@@ -211,9 +211,9 @@ From the data, Dubai has the most used cars with a total number of 8,011 (80.11%
   GROUP BY Make
   ORDER BY COUNT(Make) DESC
   LIMIT 10;
-  ```
+ ```
 
-  ![Top 10 Brands](https://github.com/user-attachments/assets/0b13fbc9-fadb-4fdb-90e6-1a7bd3e1ced9)
+![Top 10 Brands](https://github.com/user-attachments/assets/0b13fbc9-fadb-4fdb-90e6-1a7bd3e1ced9)
 
 
 #### - Top 10 expensive cars;
@@ -299,7 +299,7 @@ ORDER BY COUNT(transmission) DESC;
 
 ## Dashboard
 
-
+I designed the dashboard to give user a 
 ![Dashboard](https://github.com/user-attachments/assets/c068be70-2446-4ee9-bfa1-570b4f84bb58)
 
 
@@ -314,5 +314,9 @@ ORDER BY COUNT(transmission) DESC;
 ### Recommendations
 Based on the analysis, I recommend the following actions:
 
-- With a good price and marketing strategy, new car dealer shops can take advantage of the market in the other states where there are limited used cars available.
+- With a good price and marketing strategy, car dealer shops can take advantage of the market in the other states like Fujeirah, Umm Al Qawain, Ras Al Khaimah, Al Ain where there are limited used cars available.
 
+  
+- With the help of the record page in the dashboard, Buyers can know the average price, average mileage, and average age of each type of model before buying a used car.
+
+- A survey on why the preference or number of electric and hybrid cars are low in UAE, this can help car dealer shops and buyers get insights to take advantage of the rapid growth and incentives designed on the usage of electric vehicles.
