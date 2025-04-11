@@ -319,6 +319,6 @@ Based on the analysis, I recommend the following actions:
 - With a good price and marketing strategy, car dealer shops can take advantage of the market in the other states like Fujeirah, Umm Al Qawain, Ras Al Khaimah, Al Ain where there are limited used cars available.
 
   
-- With the help of the record page in the dashboard, Buyers can know the average price, average mileage, and average age of each type of model before buying a used car.
+- With the help of the record page in the dashboard, Buyers can know the average price, average mileage, average age and usage expectations of each type of model before buying a used car.
 
 - A survey on why the preference or number of electric and hybrid cars are low in UAE, this can help car dealer shops and buyers get insights to take advantage of the rapid growth and incentives designed on the usage of electric vehicles.
