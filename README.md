@@ -181,7 +181,7 @@ The analysis is based on a dataset of 10,000 used cars in UAE. The dataset conta
 After analysing the data, the following observations were found;
 - The data contained used cars from 8 different states in UAE.
 - There are 65 different brands (make) with 488 different models.
-- Manufacturing year of models are from 2005 to 2024 with an average age of 11.
+- Manufacturing year of models are from 2005 to 2024 with an average age of 11 years.
 - Mileage ranges from 10,006 to 299,996 with an average of 155.16K.
 - The expensive car is Mclaren P1 costing AED 14,686,975 and the cheapest car is Nissan Altima costing AED 7,183.
 - Total Value of Used Cars: AED 2.45Bn
