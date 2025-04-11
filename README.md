@@ -43,7 +43,7 @@ In the initial data preparation phase, I performed the following tasks:
   DESCRIBE uae_used_cars_10k;
   ```
   
-- The dataset contain an empty, none and unkown data in the Cylinder column, which I grouped them all as UNKNOWN using the CASE Statement query below,
+- The dataset contain an empty, none and unkown fields in the Cylinder column, which I grouped them all as UNKNOWN using the CASE Statement query below,
 
 ``` SQL
 SELECT Cylinders, 
