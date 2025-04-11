@@ -297,9 +297,11 @@ ORDER BY COUNT(transmission) DESC;
 
 
 
-## Dashboard
+### Dashboard
 
-I designed the dashboard to give user a 
+I designed the dashboard to be very user friendly, each page has buttons for the locations and the page navigations namely Dashbaord, Insights and Records. The interface gives the overall analysis of the dataset while clicking on each location will give you just the analysis on that specific location.
+
+
 ![Dashboard](https://github.com/user-attachments/assets/c068be70-2446-4ee9-bfa1-570b4f84bb58)
 
 
