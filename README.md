@@ -189,7 +189,7 @@ After analysing the data, the following observations were found;
 #### - Used cars per state
   
 
-From the data, Dubai has the the most number of used cars with a total number of 8,011 (80.11%) and Fujeirah having the least with a total number of 9 (0.09%).
+From the data, Dubai has the most used cars with a total number of 8,011 (80.11%) and Fujeirah having the least with a total number of 9 (0.09%).
 
 
 ![Number of Cars by State](https://github.com/user-attachments/assets/a6b9da72-c2b0-4d8b-884b-2d476ae2a824)
