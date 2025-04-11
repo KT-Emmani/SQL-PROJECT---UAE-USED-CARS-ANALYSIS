@@ -179,7 +179,7 @@ WITH Used_Cars AS
 The analysis is based on a dataset of 10,000 used cars in UAE. The dataset contains information on the make, model, year, price, mileage, body type, cylinder, transmissions, fuel type, color and descriptions to help understand the market trends and popularity of used cars in each state and UAE at large.
 
 After analysing the data, the following observations were found;
-- The data conatined used cars from 8 different states in UAE.
+- The data contained used cars from 8 different states in UAE.
 - There are 65 different brands (make) with 488 different models.
 - Manufacturing year of models are from 2005 to 2024 with an average age of 11.
 - Mileage ranges from 10,006 to 299,996 with an average of 155.16K.
