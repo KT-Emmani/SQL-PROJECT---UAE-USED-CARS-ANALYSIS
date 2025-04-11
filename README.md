@@ -29,8 +29,8 @@ Dataset can be found in Kaggle [download](https://www.kaggle.com/datasets/mohame
 ## Data Preparation
 
 ### Tools Used
-- SQL for cleaning, manipulation, and extracting of data
-- Power Bi for visualization
+- SQL for cleaning, manipulation, and extracting of data.
+- Power Bi for visualization.
 
 ### Cleaning 
 In the initial data preparation phase, I performed the following tasks:
