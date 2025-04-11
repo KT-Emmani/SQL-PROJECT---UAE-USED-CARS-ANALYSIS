@@ -314,4 +314,5 @@ ORDER BY COUNT(transmission) DESC;
 ### Recommendations
 Based on the analysis, I recommend the following actions:
 
+- With a good price and marketing strategy, new car dealer shops can take advantage of the market in the other states where there are limited used cars available.
 
