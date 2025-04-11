@@ -314,6 +314,4 @@ ORDER BY COUNT(transmission) DESC;
 ### Recommendations
 Based on the analysis, I recommend the following actions:
 
-- To reduce operational cost, Plato's pizza should consider operating from 12pm to 11pm.
-- Plato's Pizza should consider running promotions in the month of september and october to boost sales during that period.
 
