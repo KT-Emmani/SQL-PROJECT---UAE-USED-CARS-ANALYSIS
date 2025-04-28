@@ -255,8 +255,8 @@ GROUP BY `Body Type`
 ORDER BY COUNT(`Body Type`) DESC;
 ```
 
+![Body Type](https://github.com/user-attachments/assets/b38ce8a5-575e-4e8b-9c08-285c21d6cecc)
 
-![Body Type](https://github.com/user-attachments/assets/31dce767-0bf8-4945-825c-80ba07f10755)
 
 
 #### - Popular Fuel type; 
@@ -274,8 +274,8 @@ GROUP BY `Fuel Type`
 ORDER BY COUNT(`Fuel Type`) DESC;
 ```
 
+![Fuel Types](https://github.com/user-attachments/assets/8ce124ac-594d-4698-a5ab-aee3f0b7dbbb)
 
-![Fuel Types](https://github.com/user-attachments/assets/c8d12820-7d37-4637-8f8c-a3d385943c78)
 
 
 #### - Popular Transmission
@@ -293,7 +293,8 @@ GROUP BY Transmission
 ORDER BY COUNT(transmission) DESC;
 ```
 
-![Transmission type](https://github.com/user-attachments/assets/f535ba28-875b-4abf-bbbb-5f2d74b7ea43)
+![Transmission type](https://github.com/user-attachments/assets/7dff3c37-c7e9-45d3-b551-277afa56ac58)
+
 
 
 
@@ -301,15 +302,13 @@ ORDER BY COUNT(transmission) DESC;
 
 I designed the dashboard to be very user friendly, each page has buttons for the locations and the page navigations namely Dashbaord, Insights and Records. The interface gives the overall analysis of the dataset while clicking on each location will give you just the analysis on that specific location.
 
-
-![Dashboard](https://github.com/user-attachments/assets/c068be70-2446-4ee9-bfa1-570b4f84bb58)
-
-
-![Insights](https://github.com/user-attachments/assets/f991a57a-c484-4544-9c56-86b5d01c93b1)
+![Dashboard](https://github.com/user-attachments/assets/5c4c8995-c4fc-408a-a303-5cff4846cbaf)
 
 
+![Insights](https://github.com/user-attachments/assets/4e1a3e19-db80-4612-92db-2911f5e916c9)
 
-![Records](https://github.com/user-attachments/assets/eefa55c1-e399-4733-882c-1cabedb732a6)
+
+![Records](https://github.com/user-attachments/assets/f64bbc34-060c-469e-86f9-b67da6a73a93)
 
 
   
