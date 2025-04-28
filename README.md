@@ -300,7 +300,7 @@ ORDER BY COUNT(transmission) DESC;
 
 ### Dashboard
 
-I designed the dashboard to be very user friendly, each page has buttons for the locations and the page navigations namely Dashbaord, Insights and Records. The interface gives the overall analysis of the dataset while clicking on each location will give you just the analysis on that specific location.
+I designed the dashboard to be very user friendly, each page has buttons for the locations and the page navigations namely Dashbaord, Insights and Records. The interface gives the overall analysis of the dataset while clicking on each location will give you just the analysis on that specific location. On the Records page, the user can filter on the Make, Model, Body Type, Body Type and Damaged Type to draw insight.
 
 ![Dashboard](https://github.com/user-attachments/assets/5c4c8995-c4fc-408a-a303-5cff4846cbaf)
 
