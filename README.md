@@ -1,5 +1,9 @@
 # UAE Used Cars Analysis (Interactive Dashboard creation using Power Bi)
 
+
+![dubai-road](https://github.com/user-attachments/assets/b570d8bc-a79c-4692-b2b2-9491864cdf5a)
+
+
 ## Table of Contents
 
 - [Project Overview](#project-overview)
